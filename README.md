@@ -8,7 +8,7 @@ I joined in October 2025 and continued the app from an earlier research prototyp
 
 | Role | Platform | Stack | Since |
 |---|---|---|---|
-| Software developer, mostly XR, also managing the project | Apple Vision Pro, visionOS, Unity 6.3 LTS, PolySpatial / RealityKit | C#, Shader Graph, MaterialX, Xcode, Python | October 2025 |
+| Software developer and project lead | Apple Vision Pro, visionOS, Unity 6.3 LTS, PolySpatial / RealityKit | C#, Shader Graph, MaterialX, Xcode, Python | October 2025 |
 
 **In numbers**
 
