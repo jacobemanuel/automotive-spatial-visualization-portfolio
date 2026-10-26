@@ -2,17 +2,16 @@
 
 # Automotive XR on Apple Vision Pro
 
-An in-house app for reviewing vehicles at full scale on Apple Vision Pro. You sit in a vehicle and operate it with your hands. You can also compare variants. Everything is rendered on the device.
+An in-house Apple Vision Pro app for full-scale vehicle design reviews, with hand-tracked interaction, switching between variants and rendering on the device.
 
-I joined in October 2025 and continued the app from an earlier research prototype. Since then I've worked across the platform, rendering, interaction and release engineering. This page covers the problems where visionOS, PolySpatial and RealityKit pushed back and how I solved them.
+I joined in October 2025 and continued the app from an earlier research prototype. Since then I've worked across the platform, rendering, interaction and release engineering. This page covers the main technical problems on visionOS, PolySpatial and RealityKit and how I solved them.
 
 | Role | Platform | Stack | Since |
 |---|---|---|---|
-| XR engineer | Apple Vision Pro, visionOS, Unity 6.3 LTS, PolySpatial / RealityKit | C#, Shader Graph, MaterialX, Xcode, Python | October 2025 |
+| Software developer, mostly XR, also managing the project | Apple Vision Pro, visionOS, Unity 6.3 LTS, PolySpatial / RealityKit | C#, Shader Graph, MaterialX, Xcode, Python | October 2025 |
 
 **In numbers**
 
-- an existing codebase of about 20,000 lines of project C# in 200+ files, migrated to Unity 6.3 LTS and PolySpatial 3
 - 0 of 90 head positions clipped in a HUD sweep across both front seats (Editor)
 - 0 Xcode errors on a fresh export (1,284 IL2CPP units, Swift and linking) after fixing a build-callback ordering bug
 - 87 packages pinned and build warnings cut from 395 to 52, none of them in project code
@@ -22,7 +21,7 @@ I joined in October 2025 and continued the app from an earlier research prototyp
 
 ### Stereo mirrors without planar reflections
 
-RealityKit has no planar reflections. A mirror also has to hold still while your head moves. So each mirror renders from the eye's reflected position through the outline of the physical mirror. That's an off-axis frustum per eye, based on the head pose and an assumed eye distance. The shader picks the image for each eye. Clip planes only apply to the capture, and at most one mirror re-renders per frame. The material reaches RealityKit as PBR through MaterialX.
+RealityKit has no planar reflections, and the reflection has to stay stable while the head moves. So each mirror renders from the eye's reflected position through the outline of the physical mirror, with an off-axis frustum per eye based on the head pose and an assumed eye distance. The shader picks the image for each eye. Clip planes only apply to the capture, and at most one mirror re-renders per frame. The material reaches RealityKit as PBR through MaterialX.
 
 ![Stereo mirrors: one reflected camera per eye, with an off-axis frustum through the mirror outline](media/stereo-mirrors.png)
 
@@ -65,7 +64,7 @@ Looking and pinching also clicks UI on visionOS, and the hand zones are large. S
 
 ### Physics under spatial input
 
-You can grab props with a direct or an indirect pinch. Exactly one touch owns an object at a time. Release velocity is filtered and extreme impulses are clamped, so a tracking spike doesn't launch anything. Lost input releases safely, and thrown props come back. Collision uses 30 fitted primitives in place of 138,254 triangles of unneeded CAD colliders (four mesh colliders remain). It sits on a layer that PolySpatial doesn't sync, so the primitives never become look-and-pinch targets.
+Props can be grabbed with a direct or an indirect pinch. Exactly one touch owns an object at a time. Release velocity is filtered and extreme impulses are clamped, so a tracking spike doesn't launch anything. Lost input releases safely, and thrown props come back. Collision uses 30 fitted primitives in place of 138,254 triangles of unneeded CAD colliders (four mesh colliders remain). It sits on a layer that PolySpatial doesn't sync, so the primitives never become look-and-pinch targets.
 
 *Status: grabbing approved in my check on the headset. Colliders verified in the Editor.*
 
