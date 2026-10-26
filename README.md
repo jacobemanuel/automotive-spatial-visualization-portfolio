@@ -1,8 +1,8 @@
-![Automotive XR on Apple Vision Pro](media/hero.jpg)
+![Automotive XR](media/hero.jpg)
 
-# Automotive XR on Apple Vision Pro
+# Automotive XR
 
-An in-house Apple Vision Pro app for full-scale vehicle design reviews, with hand-tracked interaction, switching between variants and rendering on the device.
+An in-house XR app for full-scale vehicle design reviews, with hand-tracked interaction, switching between variants and rendering on the device.
 
 I joined in October 2025 and continued the app from an earlier research prototype. Since then I've worked across the platform, rendering, interaction and release engineering. This page covers the main technical problems on visionOS, PolySpatial and RealityKit and how I solved them.
 
@@ -111,7 +111,7 @@ I own the architecture, the requirements and the acceptance criteria. I build wi
 ## Related
 
 - [Automotive content pipeline](https://github.com/jacobemanuel/automotive-content-pipeline-portfolio): geometry processing on CAD surfaces, collision proxies, Blender tooling and a validating exporter.
-- [receptionOS Visualizer](https://github.com/jacobemanuel/receptionos-visualizer-portfolio): a Vision Pro application for aligned 3D scans.
+- [receptionOS Visualizer](https://github.com/jacobemanuel/receptionos-visualizer-portfolio): an XR application for aligned 3D scans.
 
 The images here are schematic illustrations made for this page. They aren't OEM designs and don't contain any vehicle data. Employer, vehicle and internal tool names are left out.
 
