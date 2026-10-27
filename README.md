@@ -4,7 +4,7 @@
 
 An in-house XR app for full-scale vehicle design reviews on a headset, used by designers, engineers and management.
 
-Reviewers sit in a physical seating buck, a mock-up with real seats and a real steering wheel. The focus is the interior, from production cars to concept studies. I took the app over in October 2025, when it was still a research prototype, and today I lead its platform and architecture for a small team.
+Reviewers sit in a physical seating buck, a mock-up with real seats and a real steering wheel. The focus is the interior, from production cars to concept studies. I took the app over in October 2025, when it was still a research prototype. Since mid-2026 I own its platform, architecture and releases, working with a team of three and an external development partner.
 
 | Role | Platform | Stack | Since |
 |---|---|---|---|
