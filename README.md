@@ -2,7 +2,7 @@
 
 # Automotive XR
 
-An in-house XR app for full-scale vehicle design reviews on a headset, used by designers, engineers and management.
+An in-house XR app for full-scale vehicle design reviews on a headset. Designers, engineers and management use it to judge an interior before a physical prototype exists.
 
 Reviewers sit in a physical seating buck, a mock-up with real seats and a real steering wheel. The focus is the interior, from production cars to concept studies. I took the app over in October 2025, when it was still a research prototype. Since mid-2026 I own its platform, architecture and releases, working with a team of three and an external development partner.
 
@@ -14,17 +14,17 @@ Reviewers sit in a physical seating buck, a mock-up with real seats and a real s
 
 - **Two ways to review.** In mixed reality the car sits on the seating buck. A printed marker at a known point places it once, then a world anchor holds it, so it doesn't jitter. With no marker in view, the car goes on the detected floor. The other way is a 360° day or night environment that hides the room and lights the car.
 - **Tracked steering.** The virtual steering assembly follows the buck's real one through its own marker, every frame.
-- **Variants from the driver's seat.** Seats, steering wheels, materials and about a dozen display concepts can be swapped without getting up. Switching to another vehicle keeps the doors and the wheel as they were.
+- **Variants from the driver's seat.** Seats, steering wheels, materials and display concepts can be swapped without getting up. Switching to another vehicle keeps the doors and the wheel as they were.
 - **Hands on the car.** Doors latch, swing with inertia, close softly and play sound from where they are. The steering wheel turns with one or two hands. Props can be grabbed and thrown, and they come back.
 
 ## How the year went
 
-- **October 2025 to January 2026:** took over the research prototype, got a full vehicle running smoothly on the headset at about 1.5 million polygons, merged two parallel Unity projects into one baseline and wrote the team's version-control guide. One build went out on site for a management session, with fixes made on the spot.
+- **October 2025 to January 2026:** took over the research prototype, got a full vehicle running smoothly on the headset at about 1.5 million polygons, merged two parallel Unity projects into one baseline and wrote the team's version-control guide.
 - **February to June 2026:** each vehicle shipped as its own app. I made concept builds with new displays and a new steering wheel for design reviews and updated the dashboard mapping. I also brought the team's Blender add-on to Blender 4 and 5 (more in the [content pipeline](https://github.com/jacobemanuel/automotive-content-pipeline-portfolio)).
 - **July 2026:** the move to Unity 6.3 LTS and PolySpatial 3, with the crash and build fixes described below.
 - **August 2026:** the headset closed the app at its memory limit. I moved the project to a clean baseline with date-based build numbers.
-- **September 2026:** two vehicles that can be switched from the seat, with doors and steering operated by hand, and an onboarding repository with a developer guide for an external development partner.
-- **October 2026:** a full review build with materials, quilting and stitching, cabin lighting and lighter meshes (the [content pipeline](https://github.com/jacobemanuel/automotive-content-pipeline-portfolio) has the details), and release builds checked file by file against the last accepted one. Also a workshop for the team on building with AI agents, and a proposal for the next architecture with a native prototype.
+- **September 2026:** two vehicles that can be switched from the seat, with doors and steering operated by hand. I also onboarded a developer from an external partner over three weeks, with a repository and a developer guide, and I oversee their work on the technical side.
+- **October 2026:** a full review build with materials, quilting and stitching, cabin lighting and lighter meshes (the [content pipeline](https://github.com/jacobemanuel/automotive-content-pipeline-portfolio) has the details), with release builds checked file by file against the last accepted one. I proposed the next architecture and built a native prototype for it. I also gave my department a one-hour talk on how I use AI in my work with Unity, XR and CAD, and colleagues asked me for follow-up workshops.
 
 ## Selected technical problems
 
