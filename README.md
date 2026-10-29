@@ -4,7 +4,7 @@
 
 An in-house XR app for full-scale vehicle design reviews on a headset. Designers, engineers and management use it to judge an interior before a physical prototype exists.
 
-Reviewers sit in a physical seating buck, a mock-up with real seats and a real steering wheel. The focus is the interior, from production cars to concept studies. I took the app over in October 2025, when it was still a research prototype. Since mid-2026 I own its platform, architecture and releases, working with a team of three and an external development partner.
+Reviewers sit in a physical seating buck, a mock-up with real seats and a real steering wheel. The focus is the interior, from concept studies to production cars. In October 2025 I took the app over with a colleague, when it was still a research prototype, and we develop it on requirements from my team lead, who owns the product. As technical lead I proposed the next architecture, worked out from a decision tree. It was accepted and an external development partner is building it now: I oversee their work and answer their technical questions.
 
 | Role | Platform | Stack | Since |
 |---|---|---|---|
@@ -19,12 +19,12 @@ Reviewers sit in a physical seating buck, a mock-up with real seats and a real s
 
 ## How the year went
 
-- **October 2025 to January 2026:** took over the research prototype, got a full vehicle running smoothly on the headset at about 1.5 million polygons, merged two parallel Unity projects into one baseline and wrote the team's version-control guide.
+- **October 2025 to January 2026:** took over the research prototype with a colleague, got a full vehicle running smoothly on the headset at about 1.5 million polygons, set up versioned builds and wrote the team's version-control guide. The project's size caused merge conflicts in Unity Version Control on a scale nobody in the company had seen before, and we solved them with Unity's support team.
 - **February to June 2026:** each vehicle shipped as its own app. I made concept builds with new displays and a new steering wheel for design reviews and updated the dashboard mapping. I also brought the team's Blender add-on to Blender 4 and 5 (more in the [content pipeline](https://github.com/jacobemanuel/automotive-content-pipeline-portfolio)).
-- **July 2026:** the move to Unity 6.3 LTS and PolySpatial 3, with the crash and build fixes described below.
+- **July 2026:** the move to Unity 6.3 LTS and PolySpatial 3, together with the Asset Transformer (Pixyz), which isn't fully made for visionOS, with the crash and build fixes described below.
 - **August 2026:** the headset closed the app at its memory limit. I moved the project to a clean baseline with date-based build numbers.
 - **September 2026:** two vehicles that can be switched from the seat, with doors and steering operated by hand. I also onboarded a developer from an external partner over three weeks, with a repository and a developer guide, and I oversee their work on the technical side.
-- **October 2026:** a full review build with materials, quilting and stitching, cabin lighting and lighter meshes (the [content pipeline](https://github.com/jacobemanuel/automotive-content-pipeline-portfolio) has the details), with release builds checked file by file against the last accepted one. I proposed the next architecture and built a native prototype for it. I also gave my department a one-hour talk on how I use AI in my work with Unity, XR and CAD, and colleagues asked me for follow-up workshops.
+- **October 2026:** a full review build with materials, quilting and stitching, cabin lighting and lighter meshes (the [content pipeline](https://github.com/jacobemanuel/automotive-content-pipeline-portfolio) has the details), with versioned release builds. I proposed the next architecture and built a native prototype for it. It was accepted, and the external partner is building it. I also gave my department a one-hour talk on how I use AI in my work with Unity, XR and CAD, and colleagues asked me for follow-up workshops.
 
 ## Selected technical problems
 
@@ -112,7 +112,7 @@ The app keeps every vehicle in one scene and hides the inactive ones. So adding 
 
 ## How I work
 
-I own the architecture and set the requirements and acceptance criteria. I build with AI coding tools, and I review and integrate every change myself. I also tune the scenes and check every result on the headset. Each result gets recorded with its evidence and its level: verified in the Editor, approved on the headset or only reported.
+My team lead owns the product and its requirements. I'm responsible for the technical side: the architecture, the builds and version control, and the external partner's work, which I oversee. I build with AI coding tools, and I review and integrate every change myself. I also tune the scenes and check every result on the headset. Each result gets recorded with its evidence and its level: verified in the Editor, approved on the headset or only reported.
 
 ## Related
 
