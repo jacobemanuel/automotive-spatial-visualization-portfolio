@@ -4,11 +4,17 @@
 
 An in-house XR app for full-scale vehicle design reviews on a headset. Designers, engineers and management use it to judge an interior before a physical prototype exists.
 
-Reviewers sit in a physical seating buck, a mock-up with real seats and a real steering wheel. The focus is the interior, from concept studies to production cars. In October 2025 I took the app over with a colleague, when it was still a research prototype, and we develop it on requirements from my team lead, who owns the product. As technical lead I proposed the next architecture, worked out from a decision tree. It was accepted and an external development partner is building it now: I oversee their work and answer their technical questions.
+[See this project on majewski.studio](https://majewski.studio/#p3)
+
+Reviewers sit in a physical seating buck, a mock-up with real seats and a real steering wheel. The focus is the interior, from concept studies to production cars. In October 2025 I took the app over with a colleague, when it was still a research prototype, and we develop it on requirements from my team lead, who owns the product. As technical lead I proposed the next architecture, worked out from a decision tree. It was accepted and an external development partner is building it now. I oversee their work and answer their technical questions.
 
 | Role | Platform | Stack | Since |
 |---|---|---|---|
 | Software developer and technical lead | Apple Vision Pro, visionOS, Unity 6.3 LTS, PolySpatial / RealityKit | C#, Swift, Shader Graph, MaterialX, Xcode, Python | October 2025 |
+
+[![Illustration of a seating buck, a physical seat and steering wheel on a frame. A virtual windshield, dashboard, screens and side mirror fade in, lined up on them in mixed reality. Generated in Blender, no vehicle data](media/seating-buck.gif)](https://majewski.studio/assets/work/automotive-buck.mp4)
+
+*Illustration of a seating buck with the virtual interior on it.*
 
 ## What the app does
 
@@ -40,7 +46,7 @@ RealityKit has no planar (mirror) reflections, and a mirror image has to stay st
 
 ### Ordering the transparent pass
 
-RealityKit draws the members of a sorting group in its transparent pass. On the headset, ordering problems there showed up as the head-up display (HUD) jumping in front of the windshield. Glass turned see-through and UI text vanished. One rule fixed all of it: every transparent or UI element in front of an opaque member joins the group, with one documented exception. The display canvas stays outside the group, which brought its text back at the cost of correct occlusion against the group. The group went from 22 members to 15.
+RealityKit draws the members of a sorting group in its transparent pass. On the headset, ordering problems there showed up as the head-up display (HUD) jumping in front of the windshield. Glass turned see-through and UI text vanished. One rule fixed all of it. Every transparent or UI element in front of an opaque member joins the group, with one documented exception. The display canvas stays outside the group, which brought its text back at the cost of correct occlusion against the group. The group went from 22 members to 15.
 
 *Status: approved on the headset.*
 
